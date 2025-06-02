@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChargingStationController;
 
 Route::get('/', [ChargingStationController::class, 'dashboard'])->name('dashboard');
+Route::post('/charging-stations/{station}/toggle-status', [ChargingStationController::class, 'toggleStatus'])->name('charging-stations.toggle-status');
+Route::resource('charging-stations', ChargingStationController::class);
 
-Route::prefix('charging-stations')->name('charging-stations.')->group(function () {
-    Route::get('/', [ChargingStationController::class, 'index'])->name('index');
-    Route::get('/{station}', [ChargingStationController::class, 'show'])->name('show');
-    Route::post('/{station}/command', [ChargingStationController::class, 'sendCommand'])->name('command');
-});
+
+
+

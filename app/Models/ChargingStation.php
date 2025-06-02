@@ -17,7 +17,11 @@ class ChargingStation extends Model
         'firmware_version',
         'status',
         'last_heartbeat',
-        'connector_count'
+        'connector_count',
+        'location',
+        'lat',
+        'long',
+        'description',
     ];
 
     protected $casts = [

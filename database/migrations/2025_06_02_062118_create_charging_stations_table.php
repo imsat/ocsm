@@ -21,6 +21,10 @@ return new class extends Migration
             $table->string('status')->default('Unavailable');
             $table->timestamp('last_heartbeat')->nullable();
             $table->integer('connector_count')->default(1);
+            $table->string('location')->nullable();
+            $table->string('lat')->nullable();
+            $table->string('long')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
